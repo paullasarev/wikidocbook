@@ -1,0 +1,49 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{24C41A1B-FEDF-4508-9457-824A687C58EF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XmlUnit</RootNamespace>
+    <AssemblyName>XmlUnit</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="nunit.framework" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src" />
+    <Folder Include="src\csharp" />
+    <Compile Include="src\csharp\AssemblyInfo.cs" />
+    <Compile Include="src\csharp\DiffConfiguration.cs" />
+    <Compile Include="src\csharp\Difference.cs" />
+    <Compile Include="src\csharp\Differences.cs" />
+    <Compile Include="src\csharp\DifferenceType.cs" />
+    <Compile Include="src\csharp\DiffResult.cs" />
+    <Compile Include="src\csharp\Validator.cs" />
+    <Compile Include="src\csharp\XmlAssertion.cs" />
+    <Compile Include="src\csharp\XmlDiff.cs" />
+    <Compile Include="src\csharp\XmlInput.cs" />
+    <Compile Include="src\csharp\XmlOutput.cs" />
+    <Compile Include="src\csharp\XPath.cs" />
+    <Compile Include="src\csharp\Xslt.cs" />
+  </ItemGroup>
+</Project>
