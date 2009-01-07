@@ -1,0 +1,66 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{A675DCC5-845B-4498-9A98-B42FF1DED8A1}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XmlUnitTests</RootNamespace>
+    <AssemblyName>XmlUnitTests</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="nunit.framework" />
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tests" />
+    <Folder Include="tests\csharp" />
+    <Folder Include="tests\etc" />
+    <Compile Include="tests\csharp\AssemblyInfo.cs" />
+    <Compile Include="tests\csharp\DiffConfigurationTests.cs" />
+    <Compile Include="tests\csharp\DifferenceTests.cs" />
+    <Compile Include="tests\csharp\DiffResultTests.cs" />
+    <Compile Include="tests\csharp\ValidatorTests.cs" />
+    <Compile Include="tests\csharp\XmlAssertionTests.cs" />
+    <Compile Include="tests\csharp\XmlDiffTests.cs" />
+    <Compile Include="tests\csharp\XmlInputTests.cs" />
+    <Compile Include="tests\csharp\XPathTests.cs" />
+    <Compile Include="tests\csharp\XsltTests.cs" />
+    <None Include="tests\etc\animal.xsl" />
+    <None Include="tests\etc\Book.xsd" />
+    <None Include="tests\etc\BookXsdGenerated.xml" />
+    <None Include="tests\etc\BookXsdGeneratedNoSchema.xml" />
+    <None Include="tests\etc\controlDetail.xml" />
+    <None Include="tests\etc\controlNamespaces.xml" />
+    <None Include="tests\etc\invalidBook.xml" />
+    <None Include="tests\etc\InvalidBookXsdGeneratedNoSchema.xml" />
+    <None Include="tests\etc\test.blame.html" />
+    <None Include="tests\etc\test.dtd" />
+    <None Include="tests\etc\test1.xml" />
+    <None Include="tests\etc\test2.xml" />
+    <None Include="tests\etc\testAnimal.xml" />
+    <None Include="tests\etc\testDetail.xml" />
+    <None Include="tests\etc\testNamespaces.xml" />
+    <ProjectReference Include="XmlUnit.csproj">
+      <Project>{24C41A1B-FEDF-4508-9457-824A687C58EF}</Project>
+      <Name>XmlUnit</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
